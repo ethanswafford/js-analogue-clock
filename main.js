@@ -8,8 +8,11 @@ function getTime() {
     const minutes = now.getMinutes();
     const hours = now.getHours();
     const timeInterval = 6;
+    console.log(seconds);
 
-    secondsHand.style.transform = 'rotate(60deg)'
+    secondsHand.style.transform = 'rotate(' + (seconds * timeInterval) + 'deg)';
+    minutesHand.style.transform = 'rotate(' + (minutes * timeInterval) + 'deg)';
+    hoursHand.style.transform = 'rotate(' + (hours * timeInterval) + 'deg)';
 }
 
-getTime();
+setInterval(getTime, 1000);
